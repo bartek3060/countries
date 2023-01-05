@@ -1,0 +1,22 @@
+.wrapper{
+  padding: 1.3rem;
+  font-size: 1rem;
+  justify-content: space-between;
+
+   h2{
+     font-size: 1rem;
+     font-weight: 600;
+     margin: 0;
+     line-height: 1.6rem;
+   }
+
+  .dark-mode{
+    justify-content: space-between;
+    i{
+      margin-right: 0.7rem;
+      transform: rotate(-20deg);
+      display: inline-block;
+      line-height: 1.2rem;
+    }
+  }
+}
