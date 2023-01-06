@@ -7,13 +7,15 @@
   box-sizing: border-box;
 }
 body{
+  --color-header:(0, 0%, 100%);
+  --color-inputs:(0, 0%, 100%);
   --color-background:(0, 0%, 100%);
 }
-body.dark-mode{
+body.dark-theme{
   --color-background:hsl(209, 23%, 22%);
 }
 body{
-  background-color: var(--color-background);
+  background-color: $color-light-gray!important;
   font-size: 62.5%;
   font-family: 'Nunito Sans', sans-serif;
 }
