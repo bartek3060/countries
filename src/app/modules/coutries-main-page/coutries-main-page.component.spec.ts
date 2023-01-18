@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoutriesMainPageComponent } from './coutries-main-page.component';
+import { HttpClientModule} from "@angular/common/http";
+import {FiltersComponent} from "./filters/filters.component";
+import {ReactiveFormsModule} from "@angular/forms";
+import {CoutriesListComponent} from "./coutries-list/coutries-list.component";
 
 describe('CoutriesMainPageComponent', () => {
   let component: CoutriesMainPageComponent;
@@ -8,7 +12,8 @@ describe('CoutriesMainPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoutriesMainPageComponent ]
+      imports:[HttpClientModule,ReactiveFormsModule],
+      declarations: [ CoutriesMainPageComponent,FiltersComponent,CoutriesListComponent ],
     })
     .compileComponents();
 

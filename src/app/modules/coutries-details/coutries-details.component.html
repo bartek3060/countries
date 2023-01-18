@@ -1,1 +1,1 @@
-<p class="d-flex">coutries-details works!</p>
+<p class="d-flex" *ngIf="(coutryDetails$ | async) as coutry">{{coutry.name}}</p>

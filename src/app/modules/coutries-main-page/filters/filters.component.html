@@ -1,13 +1,25 @@
 <div class="wrapper d-flex flex-column">
+  <form (ngSubmit)="onSearch()" [formGroup]="searchForm">
   <div
     class="search-box d-flex justify-content-center align-items-center gap-2"
   >
-    <i class="fa-solid fa-magnifying-glass"></i
-    ><input [defaultValue]="'Search for a country...'" type="text" />
+   <i class="fa-solid fa-magnifying-glass"></i
+   > <input [formControlName]="'searchValue'" placeholder="Search for a country..." type="text" />
   </div>
+  </form>
   <div class="">
-    <select>
-      <option>Filter by region</option>
+    <form [formGroup]="filterForm">
+    <select (change)="onFilter()" [formControlName]="'filteredValue'" >
+      <option [ngValue]="null" [selected]="true" disabled>Filter by region</option>
+      <option ngValue="All">All</option>
+      <option ngValue="Asia">Asia</option>
+      <option ngValue="Europe">Europe</option>
+      <option ngValue="Africa">Africa</option>
+      <option ngValue="Oceania">Oceania</option>
+      <option ngValue="Americas">Americas</option>
+      <option ngValue="Polar">Polar</option>
+      <option ngValue="Antarctic Ocean">Antarctic Ocean</option>
     </select>
+    </form>
   </div>
 </div>
