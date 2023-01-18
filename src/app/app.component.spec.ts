@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {HeaderComponent} from "./core/header/header.component";
+import {RouterModule} from "@angular/router";
 
 describe('appComponent', () => {
   let component: AppComponent;
@@ -7,7 +9,8 @@ describe('appComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      imports:[RouterModule],
+      declarations: [AppComponent,HeaderComponent],
     }).compileComponents();
   }));
 

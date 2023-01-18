@@ -1,0 +1,11 @@
+<ul class="coutries-list__wrapper" *ngIf="coutriesList.length>0">
+  <li class="coutries-element" *ngFor="let coutry of coutriesList">
+    <img class="coutries-element__img" [src]="coutry.flags.png" alt="">
+    <div class="coutries-element__text">
+    <h3 class="coutries-element__name">{{coutry.name}}</h3>
+    <div class="coutries-element__population"><span>Population: </span><span>{{coutry.population | number}}</span></div>
+    <div class="coutries-element__region"><span>Region: </span><span>{{coutry.region}}</span></div>
+    <div class="coutries-element__capital"><span>Capital: </span><span>{{coutry.capital?coutry.capital:'Not exist'}}</span></div>
+    </div>
+  </li>
+</ul>
