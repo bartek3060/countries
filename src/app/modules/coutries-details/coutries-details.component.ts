@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoutriesService } from '../../shared/services/coutries.service';
 import { Observable, switchMap } from 'rxjs';
 import { CoutryDetails } from '../../shared/interfaces/coutry-details';
@@ -15,18 +15,18 @@ export class CoutriesDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private coutriesService: CoutriesService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.coutryDetails$ = this.route.params.pipe(
-      switchMap((params) => {
-        return this.coutriesService.getCoutryDetails(params['coutry-name']);
-      })
+      switchMap((params) =>
+        this.coutriesService.getCoutryDetails(params['coutry-name'])
+      )
     );
   }
 
-  returnToList(){
-    this.router.navigate(['..'])
+  returnToList() {
+    this.router.navigate(['..']);
   }
 }

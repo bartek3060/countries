@@ -17,54 +17,58 @@
     </div>
     <div class="content-wrapper">
       <div class="content-without-borders">
-      <div class="desc-first-part">
-        <div class="coutry-details__name">
-          <span>{{ coutryDetails.name }}</span>
+        <div class="desc-first-part">
+          <div class="coutry-details__name">
+            <span>{{ coutryDetails.name }}</span>
+          </div>
+          <div class="coutry-details__text-line">
+            <span>Native Name: </span
+            ><span>{{ coutryDetails.nativeName }}</span>
+          </div>
+          <div class="coutry-details__text-line">
+            <span>Population: </span
+            ><span>{{ coutryDetails.population | number }}</span>
+          </div>
+          <div class="coutry-details__text-line">
+            <span>Region: </span><span>{{ coutryDetails.region }}</span>
+          </div>
+          <div class="coutry-details__text-line">
+            <span>Sub Region: </span><span>{{ coutryDetails.subregion }}</span>
+          </div>
+          <div class="coutry-details__text-line mb-3">
+            <span>Capital: </span><span>{{ coutryDetails.capital }}</span>
+          </div>
         </div>
-        <div class="coutry-details__text-line">
-          <span>Native Name: </span><span>{{ coutryDetails.nativeName }}</span>
-        </div>
-        <div class="coutry-details__text-line">
-          <span>Population: </span
-          ><span>{{ coutryDetails.population | number }}</span>
-        </div>
-        <div class="coutry-details__text-line">
-          <span>Region: </span><span>{{ coutryDetails.region }}</span>
-        </div>
-        <div class="coutry-details__text-line">
-          <span>Sub Region: </span><span>{{ coutryDetails.subregion }}</span>
-        </div>
-        <div class="coutry-details__text-line mb-3">
-          <span>Capital: </span><span>{{ coutryDetails.capital }}</span>
-        </div>
-      </div>
-      <div class="desc-second-part">
-        <div class="coutry-details__text-line">
-          <span>Top Level Domain: </span
-          ><span>{{ coutryDetails.topLevelDomain[0] }}</span>
-        </div>
+        <div class="desc-second-part">
+          <div class="coutry-details__text-line">
+            <span>Top Level Domain: </span
+            ><span>{{ coutryDetails.topLevelDomain[0] }}</span>
+          </div>
 
-        <div class="coutry-details__text-line">
-          <span>Currencies: </span>
-          <ng-container *ngIf="coutryDetails.currencies; else noInformation">
-            <span
-              *ngFor="let currience of coutryDetails?.currencies; let i = index"
-              >{{ i ? ", " : "" }}{{ currience.name }}</span
+          <div class="coutry-details__text-line">
+            <span>Currencies: </span>
+            <ng-container *ngIf="coutryDetails.currencies; else noInformation">
+              <span
+                *ngFor="
+                  let currience of coutryDetails?.currencies;
+                  let i = index
+                "
+                >{{ i ? ", " : "" }}{{ currience.name }}</span
+              >
+            </ng-container>
+          </div>
+          <div>
+            <span class="coutry-details__text-line">Languages: </span>
+
+            <ng-container *ngIf="coutryDetails.languages; else noInformation"
+              ><span *ngFor="let lang of coutryDetails.languages; let i = index"
+                >{{ i ? ", " : "" }}{{ lang.name }}</span
+              ></ng-container
             >
-          </ng-container>
-        </div>
-        <div>
-          <span class="coutry-details__text-line">Languages: </span>
-
-          <ng-container *ngIf="coutryDetails.languages; else noInformation"
-            ><span *ngFor="let lang of coutryDetails.languages; let i = index"
-              >{{ i ? ", " : "" }}{{ lang.name }}</span
-            ></ng-container
-          >
+          </div>
         </div>
       </div>
-      </div>
-      <div class="mt-3 borders-wrapper" >
+      <div class="mt-3 borders-wrapper">
         <div class="fw-bolder title"><span>Borded Coutries:</span></div>
         <div class="d-flex gap-2 justify-content-center">
           <span

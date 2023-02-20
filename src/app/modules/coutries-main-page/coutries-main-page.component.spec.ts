@@ -5,6 +5,7 @@ import { HttpClientModule} from "@angular/common/http";
 import {FiltersComponent} from "./filters/filters.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {CoutriesListComponent} from "./coutries-list/coutries-list.component";
+import {LoadingSpinnerComponent} from "../../shared/components/loading-spinner/loading-spinner.component";
 
 describe('CoutriesMainPageComponent', () => {
   let component: CoutriesMainPageComponent;
@@ -13,7 +14,7 @@ describe('CoutriesMainPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports:[HttpClientModule,ReactiveFormsModule],
-      declarations: [ CoutriesMainPageComponent,FiltersComponent,CoutriesListComponent ],
+      declarations: [ CoutriesMainPageComponent,FiltersComponent,CoutriesListComponent,LoadingSpinnerComponent ],
     })
     .compileComponents();
 

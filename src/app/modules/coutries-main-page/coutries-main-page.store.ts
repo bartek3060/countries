@@ -98,7 +98,6 @@ export class CoutriesMainPageStore extends ComponentStore<CountriesState> {
           }),
           tapResponse(
             (coutries) => {
-              console.log(coutries);
               this.setLoading(false);
               this.setDisplayedCoutries(coutries)
             },
