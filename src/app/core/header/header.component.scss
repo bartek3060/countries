@@ -2,7 +2,6 @@
   padding: 1.3rem;
   font-size: 1rem;
   justify-content: space-between;
-  background-color: white;
   box-sizing: border-box;
   width: 100%;
 
@@ -16,6 +15,8 @@
 
   .dark-mode{
     justify-content: space-between;
+    cursor: pointer;
+
     i{
       margin-right: 0.7rem;
       transform: rotate(-20deg);
@@ -23,4 +24,11 @@
       line-height: 1.2rem;
     }
   }
+}
+@media (min-width: 800px) {
+  .wrapper{
+    padding: 1rem;
+  }
+
+
 }

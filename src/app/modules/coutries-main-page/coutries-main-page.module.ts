@@ -6,10 +6,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {BrowserModule} from "@angular/platform-browser";
 import { CoutriesListComponent } from './coutries-list/coutries-list.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
   imports: [
-    HttpClientModule,CommonModule,BrowserModule,ReactiveFormsModule
+    HttpClientModule,CommonModule,BrowserModule,ReactiveFormsModule, SharedModule
 
   ],
     declarations: [CoutriesMainPageComponent, FiltersComponent, CoutriesListComponent],

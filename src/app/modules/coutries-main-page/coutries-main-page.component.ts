@@ -16,24 +16,25 @@ export class CoutriesMainPageComponent implements OnInit, OnDestroy {
 
   public displayedCoutries$: Observable<Coutry[]> =
     this.store.displayedCoutries$;
+  public loading$:Observable<boolean>=this.store.loading$
 
   constructor(private store: CoutriesMainPageStore) {}
-  ngOnInit() {
+  ngOnInit(): void {
     this.displayedCoutriesShouldChangeSub =
       this.displayedCoutriesShouldChange$.subscribe(() => {
         this.store.filterCoutry(this.filtersObject);
       });
   }
-  ngOnDestroy() {
+  ngOnDestroy() : void {
     this.displayedCoutriesShouldChangeSub?.unsubscribe();
   }
 
-  onSearch(searchedValue: string) {
+  onSearch(searchedValue: string): void {
     this.filtersObject.searchValue = searchedValue;
     this.displayedCoutriesShouldChange$.next();
   }
 
-  onRegionChange(filteredValue: string) {
+  onRegionChange(filteredValue: string): void {
     this.filtersObject.regionValue = filteredValue;
     this.displayedCoutriesShouldChange$.next();
   }

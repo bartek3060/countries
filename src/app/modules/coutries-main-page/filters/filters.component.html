@@ -1,5 +1,5 @@
-<div class="wrapper d-flex flex-column">
-  <form (ngSubmit)="onSearch()" [formGroup]="searchForm">
+<div class="wrapper d-flex">
+  <form class="search-form" (ngSubmit)="onSearch()" [formGroup]="searchForm">
   <div
     class="search-box d-flex justify-content-center align-items-center gap-2"
   >
@@ -7,7 +7,7 @@
    > <input [formControlName]="'searchValue'" placeholder="Search for a country..." type="text" />
   </div>
   </form>
-  <div class="">
+  <div class="transparent">
     <form [formGroup]="filterForm">
     <select (change)="onFilter()" [formControlName]="'filteredValue'" >
       <option [ngValue]="null" [selected]="true" disabled>Filter by region</option>

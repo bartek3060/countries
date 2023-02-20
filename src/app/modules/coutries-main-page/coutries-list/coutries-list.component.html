@@ -1,5 +1,5 @@
-<ul class="coutries-list__wrapper" *ngIf="coutriesList.length>0">
-  <li class="coutries-element" *ngFor="let coutry of coutriesList">
+<ul class="coutries-list__wrapper" *ngIf="coutriesList.length>0&&!isLoading" >
+  <li class="coutries-element" *ngFor="let coutry of coutriesList" (click)="showCoutryDetails(coutry.name)">
     <img class="coutries-element__img" [src]="coutry.flags.png" alt="">
     <div class="coutries-element__text">
     <h3 class="coutries-element__name">{{coutry.name}}</h3>
@@ -9,3 +9,8 @@
     </div>
   </li>
 </ul>
+
+
+<ng-template [ngIf]="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</ng-template>

@@ -1,2 +1,2 @@
 <app-filters (filtered)="onRegionChange($event)" (searched)="onSearch($event)"></app-filters>
-<app-coutries-list  [coutriesList]="(displayedCoutries$ | async)!"></app-coutries-list>
+<app-coutries-list [isLoading]="(loading$ | async)!"  [coutriesList]="(displayedCoutries$ | async)!"></app-coutries-list>

@@ -1,15 +1,13 @@
 .search-box {
   margin: 1.5rem 0.5rem;
-  background-color: white;
   height: 4rem;
   border-radius: 1rem;
-  color: lightgray;
 
   input {
+    color: inherit;
     height: 80%;
     width: 80%;
     border: none;
-    color: lightgray;
 
     &:focus {
       border: none;
@@ -24,8 +22,56 @@ select {
   line-height: 4rem;
   padding: 0 1rem;
   border-radius: 0.5rem;
+  border: none;
 
   &:focus {
     outline: none;
   }
+}
+
+.wrapper{
+  width: 80%;
+  margin: auto;
+  background-color: transparent;
+  flex-direction: column;
+}
+form{
+  background-color: transparent;
+}
+
+.transparent{
+  background-color: transparent;
+
+}
+
+@media (min-width: 800px) {
+  .wrapper{
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    height: 2rem;
+  }
+  .search-form{
+    width: 35%;
+
+  .search-box {
+    margin-left: 0;
+    border-radius: 0.4rem;
+    height: 100%;
+    margin-top: 0;
+  }
+    input {
+      color: inherit;
+      height: 80%;
+      width: 80%;
+    }
+  }
+  form{
+    height: 100%;
+  select {
+    height: 100%;
+    line-height: 2rem;
+    padding: 0 1rem;
+  }}
+
 }

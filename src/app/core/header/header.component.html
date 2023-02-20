@@ -1,8 +1,9 @@
 <div class="d-flex wrapper position-sticky top-0">
   <h2>Where is the world</h2>
-  <div class="dark-mode d-flex">
+  <div class="dark-mode d-flex" (click)="onColorThemeChange()">
     <div class=" d-flex justify-content-center align-items-center">
-      <i (click)="onColorThemeChange()" class="fa-regular fa-moon"></i>
+      <i *ngIf="!darkMode"  class="fa-regular fa-moon"></i>
+      <i *ngIf="darkMode"  class="fa-solid fa-moon"></i>
     </div>
     <span>Dark Mode</span>
   </div>
