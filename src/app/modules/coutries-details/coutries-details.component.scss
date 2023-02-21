@@ -1,5 +1,107 @@
 @import "src/app/shared/styles/variables";
 
-p{
-  color: $color-dark-blue;
+.wrapper{
+  width: 90%;
+  padding: 0;
+  margin: auto;
+}
+
+div{
+  background-color: transparent;
+
+}
+
+.coutry-details{
+  &__flag{
+    width: 100%;
+  }
+
+  &__name{
+    margin: 1rem 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  &__text-line{
+    margin: 0.3rem 0;
+  }
+
+  &____border-coutries{
+    margin: 1rem 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+}
+
+.return-button__link{
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 30%;
+  text-decoration: none;
+  padding: 0.5rem 0.7rem;
+  margin: 3rem 0;
+  border: 1px solid var(--color-elements);
+  cursor: pointer;
+
+  &:hover{
+    background-color: var(--color-background);
+    color: inherit;
+  }
+}
+
+@media (min-width: 800px) {
+  .coutry-details{
+  &__wrapper{
+    display: flex;
+    gap:3rem;
+    margin-bottom: 5rem;
+    height: 80vh;
+  }
+
+    &__name{
+      margin-left: 2px;
+    }
+
+  }
+
+
+  .image-wrapper,.content-wrapper{
+    width: 50%;
+    height: 80%;
+    img{
+      height: 100%;
+    }
+    //padding: ;
+  }
+
+  .content-without-borders{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  div{
+  }
+  span:not(.border-element){
+    background-color: transparent;
+
+  }
+
+  .borders-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 10%;
+    .title{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+justify-items: center;
+
+    }
+  }
 }

@@ -15,12 +15,11 @@ export class FiltersComponent {
   public searchForm = this.fb.group({ searchValue: [''] });
   public filterForm = this.fb.group({ filteredValue: ['Filter by region'] });
 
-  onSearch() {
+  onSearch(): void {
     this.searched.emit(this.searchForm.value.searchValue!);
   }
 
-  onFilter() {
+  onFilter(): void {
     this.filtered.emit(this.filterForm.value.filteredValue!)
-    console.log(this.filterForm.value.filteredValue)
   }
 }

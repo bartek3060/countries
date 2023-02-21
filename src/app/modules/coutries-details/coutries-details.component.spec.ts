@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { of } from 'rxjs';
 import {ReactiveFormsModule} from "@angular/forms";
+import {LoadingSpinnerComponent} from "../../shared/components/loading-spinner/loading-spinner.component";
 
 const fakeRouteParams = {
   snapshot: { testParam: 'test' },
@@ -18,7 +19,7 @@ describe('CoutriesDetailsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule,ReactiveFormsModule],
-      declarations: [CoutriesDetailsComponent],
+      declarations: [CoutriesDetailsComponent,LoadingSpinnerComponent],
       providers: [{ provide: ActivatedRoute, useValue: fakeRouteParams }],
     }).compileComponents();
 
