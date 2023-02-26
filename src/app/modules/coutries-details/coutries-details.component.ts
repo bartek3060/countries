@@ -26,7 +26,7 @@ export class CoutriesDetailsComponent implements OnInit {
     );
   }
 
-  returnToList() {
+  public returnToList():void {
     this.router.navigate(['..']);
   }
 }
