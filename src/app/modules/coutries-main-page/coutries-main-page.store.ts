@@ -1,15 +1,8 @@
-import { Coutry } from '../../shared/interfaces/coutry';
-import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { Injectable } from '@angular/core';
-import {
-  catchError,
-  EMPTY,
-  map,
-  Observable,
-  of,
-  switchMap
-} from 'rxjs';
-import { CoutriesService } from '../../shared/services/coutries.service';
+import { Coutry } from "../../shared/interfaces/coutry";
+import { ComponentStore, tapResponse } from "@ngrx/component-store";
+import { Injectable } from "@angular/core";
+import { catchError, EMPTY, map, Observable, of, switchMap } from "rxjs";
+import { CoutriesService } from "../../shared/services/coutries.service";
 
 export interface CountriesState {
   countries: Coutry[];
@@ -50,7 +43,8 @@ export class CoutriesMainPageStore extends ComponentStore<CountriesState> {
         ...state,
         displayedCountries,
       };
-    })
+    }
+  );
 
   readonly setLoading = this.updater((state, isLoading: boolean) => {
     return {
@@ -76,7 +70,7 @@ export class CoutriesMainPageStore extends ComponentStore<CountriesState> {
               this.setLoading(false);
               this.setCoutries(coutries);
               this.setDisplayedCoutries(coutries);
-              console.log('load')
+              console.log("load");
             },
             () => {
               this.setError(true);
@@ -88,28 +82,34 @@ export class CoutriesMainPageStore extends ComponentStore<CountriesState> {
     );
   });
 
-  readonly filterCoutry = this.effect((filteredValue: Observable<{ searchValue:string,regionValue:string }>) => {
-    return filteredValue.pipe(
-      switchMap(filterObject=>{
-        this.setLoading(true);
-        return this.counties$.pipe(
-          map((coutries)=>{
-            return this.coutriesService.filterCoutries(filterObject,coutries)
-          }),
-          tapResponse(
-            (coutries) => {
-              this.setLoading(false);
-              this.setDisplayedCoutries(coutries)
-            },
-            () => {
-              this.setLoading(false);
-              this.setError(false);
-            }
-          )
-        )
-      }),
-      catchError(()=>EMPTY)
-    )
-  });
-
+  readonly filterCoutry = this.effect(
+    (
+      filteredValue: Observable<{ searchValue: string; regionValue: string }>
+    ) => {
+      return filteredValue.pipe(
+        switchMap((filterObject) => {
+          this.setLoading(true);
+          return this.counties$.pipe(
+            map((coutries) => {
+              return this.coutriesService.filterCoutries(
+                filterObject,
+                coutries
+              );
+            }),
+            tapResponse(
+              (coutries) => {
+                this.setLoading(false);
+                this.setDisplayedCoutries(coutries);
+              },
+              () => {
+                this.setLoading(false);
+                this.setError(false);
+              }
+            )
+          );
+        }),
+        catchError(() => EMPTY)
+      );
+    }
+  );
 }

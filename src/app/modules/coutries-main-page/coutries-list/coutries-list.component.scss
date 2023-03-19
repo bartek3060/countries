@@ -1,71 +1,72 @@
-.coutries-list__wrapper{
+.coutries-list__wrapper {
+  max-width: 1024px;
   list-style: none;
   width: 70%;
-  margin:auto;
+  margin: auto;
   padding: 0;
   margin-top: 2rem;
   background-color: transparent;
 }
 
-.coutries-element{
+.coutries-element {
   border-radius: 0.7rem;
   margin: 0 0 2rem 0;
-  padding-bottom: 2rem ;
+  padding-bottom: 2rem;
 
-  &:not(:first-child){
+  &:not(:first-child) {
     margin-top: 2rem;
-}
-  &__text{
+  }
+  &__text {
     margin-top: 0.9rem;
     margin-left: 1rem;
 
-    & div:not(:first-child){
+    & div:not(:first-child) {
       margin-top: 0.3rem;
 
-      & span:first-child{
+      & span:first-child {
         font-weight: 700;
       }
     }
   }
 
-  &__name{
+  &__name {
     font-weight: 700;
     letter-spacing: 1px;
   }
 
-  &__img{
+  &__img {
     width: 100%;
     border-radius: 0.7rem 0.7rem 0 0;
   }
 }
 
 @media (min-width: 800px) {
-  .coutries-list__wrapper{
+  .coutries-list__wrapper {
     display: flex;
     gap: 1.5rem;
     width: 80%;
     flex-wrap: wrap;
   }
 
-  .coutries-element{
-    width: calc((100% - 4.5rem) / 4 );
+  .coutries-element {
+    width: calc((100% - 4.5rem) / 4);
     padding-bottom: 1rem;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
 
-    &:not(:first-child){
+    &:not(:first-child) {
       margin-top: 0;
     }
 
-    &__name{
+    &__name {
       font-weight: 700;
       font-size: 1rem;
       letter-spacing: 1px;
     }
 
-    &__img{
+    &__img {
       width: 100%;
       border-radius: 0.7rem 0.7rem 0 0;
       height: 50%;

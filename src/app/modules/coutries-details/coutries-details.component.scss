@@ -1,38 +1,35 @@
-@import "src/app/shared/styles/variables";
-
-.wrapper{
+.wrapper {
   width: 90%;
   padding: 0;
   margin: auto;
 }
 
-div{
+div {
   background-color: transparent;
-
 }
 
-.coutry-details{
-  &__flag{
+.coutry-details {
+  &__flag {
     width: 100%;
   }
 
-  &__name{
+  &__name {
     margin: 1rem 0;
     font-weight: 700;
     font-size: 1.2rem;
   }
-  &__text-line{
+  &__text-line {
     margin: 0.3rem 0;
   }
 
-  &____border-coutries{
+  &____border-coutries {
     margin: 1rem 0;
     font-weight: 700;
     font-size: 1.2rem;
   }
 }
 
-.return-button__link{
+.return-button__link {
   display: flex;
   justify-items: center;
   align-content: center;
@@ -45,63 +42,60 @@ div{
   border: 1px solid var(--color-elements);
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: var(--color-background);
     color: inherit;
   }
 }
 
 @media (min-width: 800px) {
-  .coutry-details{
-  &__wrapper{
-    display: flex;
-    gap:3rem;
-    margin-bottom: 5rem;
-    height: 80vh;
-  }
-
-    &__name{
-      margin-left: 2px;
+  .coutry-details {
+    &__wrapper {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 5rem;
+      height: 80vh;
     }
 
+    &__name {
+      margin-left: 2px;
+    }
   }
 
-
-  .image-wrapper,.content-wrapper{
+  .image-wrapper,
+  .content-wrapper {
     width: 50%;
     height: 80%;
-    img{
+    img {
       height: 100%;
     }
     //padding: ;
   }
 
-  .content-without-borders{
+  .content-without-borders {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  div{
+  div {
   }
-  span:not(.border-element){
+  span:not(.border-element) {
     background-color: transparent;
-
   }
 
-  .borders-wrapper{
+  .borders-wrapper {
     display: flex;
     align-items: center;
     gap: 1rem;
     height: 10%;
-    .title{
+    .title {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       align-content: center;
-justify-items: center;
-
+      justify-items: center;
     }
   }
 }

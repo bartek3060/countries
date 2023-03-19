@@ -1,25 +1,26 @@
-.wrapper{
+.wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100%;
 }
 
-.spinner{
+.spinner {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(50%,-50%);
+  transform: translate(50%, -50%);
   animation: infinite 1s linear rotating;
-  font-size: 30px;
-
+  font-size: 3rem;
 }
 
 @keyframes rotating {
-  from{
+  from {
     transform: rotate(0deg);
   }
 
-  to{
+  to {
     transform: rotate(360deg);
   }
-
 }

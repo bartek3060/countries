@@ -1,54 +1,64 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-@import "src/app/shared/styles/variables";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 10px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
 //light-mode
 body {
   --color-background: hsl(0, 0%, 95%);
   --color-text: hsl(200, 15%, 8%);
-  --color-input:hsl(0, 0%, 52%);
-  --color-elements: hsl(0, 0%, 100%)
+  --color-input: hsl(0, 0%, 52%);
+  --color-elements: hsl(0, 0%, 100%);
 }
 //dark-mode
 body.dark-theme {
   --color-background: hsl(207, 26%, 17%);
   --color-text: hsl(0, 0%, 100%);
   --color-input: hsl(0, 0%, 100%);
-  --color-elements: hsl(209, 23%, 22%)
+  --color-elements: hsl(209, 23%, 22%);
 }
 
 body {
-  *{
+  * {
     background-color: var(--color-elements);
   }
 
   background-color: var(--color-background);
   color: var(--color-text);
 
-  a{
+  a {
     color: var(--color-text);
     background-color: var(--color-elements);
-
   }
 
-
-
-  input, select{
+  input,
+  select {
     color: var(--color-input);
   }
-
-  font-size: 62.5%;
-  font-family: "Nunito Sans", sans-serif;
-
 }
 
 @media (min-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+}
 
-  body{
-    font-size: 50%;
+@media (min-width: 1024px) {
+  html {
+    font-size: 14px;
   }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
   }
+}
