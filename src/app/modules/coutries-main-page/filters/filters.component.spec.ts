@@ -21,4 +21,24 @@ describe("FiltersComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  describe('methods',()=>{
+    it('should onSearch() method dispatch searched event',  ()=> {
+      const spySearch=jest.spyOn(component.searched,'emit')
+      component.searchForm.value.searchValue='test-search'
+
+      component.onSearch()
+
+      expect(spySearch).toHaveBeenNthCalledWith(1,'test-search')
+    });
+
+    it('should onFilter() method dispatch filtered event',  ()=> {
+      const spyFilter=jest.spyOn(component.filtered,'emit')
+      component.filterForm.value.filteredValue='test-filter'
+
+      component.onFilter()
+
+      expect(spyFilter).toHaveBeenNthCalledWith(1,'test-filter')
+    });
+  })
 });
