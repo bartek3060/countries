@@ -10,7 +10,7 @@ import { HeaderComponent } from './core/header/header.component';
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     SharedModule,
     CoutriesDetailsModule,
