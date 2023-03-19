@@ -29,50 +29,49 @@ select {
   }
 }
 
-.wrapper{
+.wrapper {
   width: 80%;
   margin: auto;
   background-color: transparent;
   flex-direction: column;
 }
-form{
+form {
   background-color: transparent;
 }
 
-.transparent{
+.transparent {
   background-color: transparent;
-
 }
 
 @media (min-width: 800px) {
-  .wrapper{
+  .wrapper {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 1.5rem;
     height: 2rem;
   }
-  .search-form{
+  .search-form {
     width: 35%;
 
-  .search-box {
-    margin-left: 0;
-    border-radius: 0.4rem;
-    height: 100%;
-    margin-top: 0;
-  }
+    .search-box {
+      margin-left: 0;
+      border-radius: 0.4rem;
+      height: 100%;
+      margin-top: 0;
+    }
     input {
       color: inherit;
       height: 80%;
       width: 80%;
     }
   }
-  form{
+  form {
     height: 100%;
-  select {
-    height: 100%;
-    line-height: 2rem;
-    padding: 0 1rem;
-    cursor: pointer;
-  }}
-
+    select {
+      height: 100%;
+      line-height: 2rem;
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+  }
 }

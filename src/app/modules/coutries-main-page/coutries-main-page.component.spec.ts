@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { CoutriesMainPageComponent } from './coutries-main-page.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,7 @@ const mockStore = {
 };
 
 
-describe('CoutriesMainPageComponent', () => {
+describe("CoutriesMainPageComponent", () => {
   let component: CoutriesMainPageComponent;
   let fixture: ComponentFixture<CoutriesMainPageComponent>;
 
@@ -41,7 +41,7 @@ describe('CoutriesMainPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 

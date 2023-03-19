@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './core/header/header.component';
-import { RouterModule } from '@angular/router';
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./core/header/header.component";
+import { RouterModule } from "@angular/router";
 
-describe('appComponent', () => {
+describe("appComponent", () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
@@ -20,7 +20,7 @@ describe('appComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(component).toBeTruthy();
   });
 });

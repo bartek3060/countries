@@ -1,4 +1,4 @@
-import { Coutry } from './coutry';
+import { Coutry } from "./coutry";
 
 export interface CoutryDetails extends Coutry {
   nativeName: string;
