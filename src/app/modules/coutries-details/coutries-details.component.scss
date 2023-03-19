@@ -4,6 +4,10 @@
   margin: auto;
 }
 
+span:not(.border-element) {
+  background-color: transparent;
+}
+
 div {
   background-color: transparent;
 }
@@ -80,15 +84,13 @@ div {
 
   div {
   }
-  span:not(.border-element) {
-    background-color: transparent;
-  }
 
   .borders-wrapper {
     display: flex;
     align-items: center;
     gap: 1rem;
     height: 10%;
+
     .title {
       height: 100%;
       display: flex;
