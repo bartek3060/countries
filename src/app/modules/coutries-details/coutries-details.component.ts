@@ -19,6 +19,7 @@ export class CoutriesDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log('deployed')
     this.coutryDetails$ = this.route.params.pipe(
       switchMap((params) =>
         this.coutriesService.getCoutryDetails(params["coutry-name"])
