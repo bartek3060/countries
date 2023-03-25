@@ -1,7 +1,7 @@
 name: CI/CD
 
 on:
-  pull_request:
+  push:
     branches: master
 
   workflow_dispatch:
@@ -23,11 +23,13 @@ jobs:
         run: npm audit
         continue-on-error: true
 
-#      - name: Run unit tests
-#        shell: bash
-#        run: npm test
-      - name: build production file
+      - name: Run unit tests
+        shell: bash
+        run: npm test
+
+      - name: build production
         run: npm run build
+
       - name: Deploy production to Netlify
         uses: South-Paw/action-netlify-deploy@v1.2.0
         with:
