@@ -30,6 +30,7 @@ jobs:
         run: npm run build
   deploy:
     runs-on: ubuntu-20.04
+    needs: build_app
     steps:
       - name: Deploy production to Netlify
         uses: South-Paw/action-netlify-deploy@v1.2.0
