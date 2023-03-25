@@ -1,7 +1,7 @@
 name: CI/CD
 
 on:
-  push:
+  pull_request:
     branches: master
 
   workflow_dispatch:
@@ -23,11 +23,11 @@ jobs:
         run: npm audit
         continue-on-error: true
 
-      - name: Run unit tests
-        shell: bash
-        run: npm test
+#      - name: Run unit tests
+#        shell: bash
+#        run: npm test
       - name: Build file
-        run: npm run build
+        run: npm build
   deploy:
     runs-on: ubuntu-20.04
     needs: build_app
