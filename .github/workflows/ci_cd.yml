@@ -28,10 +28,6 @@ jobs:
 #        run: npm test
       - name: build production file
         run: npm run build
-  deploy:
-    runs-on: ubuntu-20.04
-    needs: build_app
-    steps:
       - uses: actions/checkout@v1
       - uses: jsmrcaga/action-netlify-deploy@master
         with:
