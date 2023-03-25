@@ -27,7 +27,7 @@ jobs:
 #        shell: bash
 #        run: npm test
       - name: Build file
-        run: npm build
+        run: npm run build
   deploy:
     runs-on: ubuntu-20.04
     needs: build_app
