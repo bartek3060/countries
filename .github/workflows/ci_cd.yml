@@ -1,0 +1,39 @@
+name: CI/CD
+
+on:
+  push:
+    branches: master
+
+  workflow_dispatch:
+jobs:
+
+  build_app:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+
+      - name: Install project
+        run: npm ci
+
+      - name: Audit npm dependencies
+        run: npm audit
+        continue-on-error: true
+
+      - name: Run unit tests
+        shell: bash
+        run: npm test
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Deploy production to Netlify
+        uses: South-Paw/action-netlify-deploy@v1.2.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+          build-dir: './dist/flags-project'
+          comment-on-commit: true
