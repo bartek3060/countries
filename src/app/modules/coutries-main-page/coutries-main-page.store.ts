@@ -70,7 +70,6 @@ export class CoutriesMainPageStore extends ComponentStore<CountriesState> {
               this.setLoading(false);
               this.setCoutries(coutries);
               this.setDisplayedCoutries(coutries);
-              console.log("load");
             },
             () => {
               this.setError(true);
